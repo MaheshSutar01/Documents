@@ -1,0 +1,211 @@
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 
+21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40
+41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58
+
+
+
+
+import React, { Component, useState, useEffect } from 'react'
+
+class Mix extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            car: 'Hyundai'
+        }
+    }
+    newModel = () => {
+        this.setState({
+            car: 'Suzuki'
+        })
+    }
+    
+    consArgs = (a) =>{
+        alert(a)
+    }
+    
+    
+    render() {
+        return (
+            <div>
+                <h3> {this.state.car}  </h3>
+                <button onClick={() => this.newModel()}> Click </button>
+<br></br>
+                <h3> constructor with args </h3>
+                <button onClick={()=> this.consArgs('hii from btn click')}> Click</button>
+                
+            </div>
+        )
+    }
+}
+
+// function Mix(){
+//     const [name,setName] = useState('suzuki')
+//     const initial = 0
+//     const [count,setCount] = useState(initial)
+    
+
+//     const fruits = ['apple','mango','grapes']
+//     const carsObject = [
+//         {id:1, brand:'Hyundai I20'},
+//         {id:2, brand:'Mercedes Benz'},
+//         {id:3, brand:'Lamborghini'}
+//     ]
+//     // if(count>5){
+//     //     return(
+//     //         <div> {count} - displaying if block</div>
+//     //     )
+//     // }
+//     return(
+//         <div> 
+//             <h3> {name} </h3>
+//             <button onClick={()=> setName( 'hyundai')}> Click</button>
+//             <br></br>
+//             <br></br>
+//             increase the count  
+//             <button onClick={()=> setCount(count+1)}> Click {count}</button>
+//             <ul> without key only value
+//                 {
+//                     fruits.map(
+//                         (fruit) => <li type={'circle'}> Fruit list - {fruit} </li>
+//                     )
+//                 }
+//             </ul>
+//             <ul> with key and value
+//                 {
+//                     carsObject.map(
+//                         (carsList) => <li type={'square'} key={carsList.id}> Cars list - {carsList.brand} </li>
+//                     )
+//                 }
+//             </ul>
+//         </div>
+//     )
+// }
+
+
+1.	In 3DEXPERIENCE, click on 3DCompass (Roles, Apps & Solutions portfolio)
+
+export default Mix
+
+// function Mix() {
+// //     const [fname,fsetName] = useState('')
+// //     const [lname,lsetName] = useState('')
+
+// //     const clickSubmit = (event) =>{
+// //     // event.preventDefault()
+// //        alert(`submitted ${fname} ${lname}`)
+// //     }
+
+
+// //   return (
+// //     <form > 
+// //       First Name :  <input type='text'
+// //       value={fname}
+// //       onChange={e => fsetName(e.target.value)}
+// //       ></input>
+// //       Last Name :  <input type='text'
+// //       value={lname}
+// //       onChange={(e) =>
+// //         lsetName(e.target.value
+// //         )}
+// //       ></input>
+    
+// //     <br></br>  <br></br> 
+     
+// //     <button onClick={()=>clickSubmit()}>Submit</button>
+// //     </form>
+// //   )
+
+// const [name,setName] = useState({})
+// const enterName = (e) =>{
+//     const name = e.target.name
+//     const value = e.target.value
+//     setName(values => ({...values, [name]: value})
+//     )}
+//     // const onclickBtn = (e) =>{
+//     //     // e.preventDefault()
+//     //     alert({name})
+//     // }
+// return(
+//     <form >
+//         First Name : <input type='text'
+//         name='fname'
+//         value={name.fname}
+//         onChange={enterName}
+//         ></input>
+//         Last Name : <input type='text'
+//         name='lname'
+//         value={name.lname}
+//         onChange={enterName}
+//         ></input>
+//         <button > Submit </button>
+
+
+//     </form>
+// )
+// }
+
+// export default Mix
+
+
+
+import React, { Component } from 'react'
+
+export class Mix extends Component {
+    constructor(props) {
+      super(props)
+    
+      this.state = {
+         name : '',
+         age : null
+      }
+    }
+    
+    nameenter=(e)=>{
+        this.setState({
+            name : e.target.value
+        })
+        // console.log(name)
+    }
+    ageenter=(e)=>{
+        this.setState({
+            age : e.target.value
+        })
+        // console.log(name)
+    }
+
+    btnclick = (e) =>{
+        alert(`${this.state.name} ${this.state.age}`)
+        e.preventDefault()
+    }
+  render() {
+    return (
+        <div>
+            
+      <form onSubmit={this.btnclick}>
+        name <input type='text' 
+        value={this.name}
+        onChange={this.nameenter}
+        ></input>
+        <br></br><br></br>
+        age <input type='number'
+        value={this.age}
+        onChange={this.ageenter}
+        ></input>
+        <br></br><br></br>
+        <button type='submit'> Click </button>
+      </form>
+        </div>
+    )
+  }
+}
+
+export default Mix
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+describe demotable;
+-- insert into demotable (id,name,address,age) values(51,'Saniya','Kolhapur',22),
+-- (37,'Mahesh','Kolhapur',23), (23,'Manasvi','Islampur',21),
+-- (22,'Samrudhi','Tarabai Park',24), (25,'Sayali','Wai',25), 
+-- (43,'Darshan','Mumbai',28,981527152);
+-- update demotable set phone='876590879' where id=51; 
+-- select name,address from demotable where address='kolhapur';
+-- alter table demotable drop column phone;
+-- select * from demotable where address='Pune' and name='Mahesh';
+-- select * from demotable where address='Mumbai' or name='Saniya';
+-- select * from demotable where age>50;
+-- select * from demotable where name like 's%';
+-- select * from demotable where name like '%i';
+-- select * from demotable where name like '%an%';
+-- select name from demotable where name not like '%an%';
+-- select name,address from demotable where address in('kolhapur','mumbai');
+-- select name,address from demotable where address not in('kolhapur','mumbai');
+-- select name,address from demotable where address in('kolhapur','mumbai') and name like '%an%';
+
+select * from course;
+select * from demotable;
+

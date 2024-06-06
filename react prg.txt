@@ -1,0 +1,606 @@
+// functional 
+
+const Greet= () => { 
+return <h3> Hello </h3>
+}
+
+-----------------------
+
+// class
+
+class Welcome extends Component{
+render(){
+return <h3> Hello </h3>
+}
+}
+
+------------------------------------
+
+// without JSX i.e. simple HTNML
+
+const Greet= (props) => { 
+//    return React.createElement('div',null,'hello');
+return React.createElement('div',
+{id:'hlloid', className:'hlloName'}
+,'hello');
+}
+
+------------------------------------
+// using props 
+
+const Greet= (props) => { 
+return <h3> Hello {props.name} </h3>			//name is an attribute form the App.Js file
+}
+
+----------------------------------------
+
+// setState by just changing state
+
+class Message extends Component{
+    constructor(){
+        super()
+        this.state = {
+            message : 'Hi visitor'
+        }
+    }
+        changeMessage() {
+            this.setState ({
+                message : 'CLicked on message'
+            })
+        }
+    render(){
+        return (
+            <div> 
+                <h3> {this.state.message} </h3>
+                <button onClick={() => this.changeMessage()}> click </button>
+            </div>
+            )
+    }
+}
+
+-------------------------------------------------
+// setState by using function and callback and props
+
+class Count extends Component {
+    constructor(){
+        super()
+        this.state={
+         count:0
+        }
+    }
+    incrCount(){
+    this.setState((prevState,props) => ({
+    count: prevState.count + props.addvalue
+    
+}))
+console.log(this.state.count)
+}
+
+    incrFive(){
+        this.incrCount()
+        this.incrCount()
+        this.incrCount()
+        this.incrCount()
+        this.incrCount()
+    }
+    render(){
+        return(
+            <div>
+                <h3>Count - {this.state.count} </h3>
+                <button onClick={() => this.incrFive()}> Click Here</button>
+               
+            </div>
+        )
+    }
+}
+
+-------------------------------------------------------------
+
+// event handling - Function 
+
+function Functionclick() {
+function clickHandler(){
+    console.log('button click')
+}
+
+  return (
+    <div>
+        <button onClick={clickHandler}> Click </button>
+      
+    </div>
+  )
+}
+
+--------------------------------------------------------
+
+// event handling - Class
+
+class Classclick extends Component{
+clickHandler(){
+    console.log('Clicked class button')
+}
+    render(){
+        return(
+            <div> 
+                <button onClick={this.clickHandler}> Class Click </button>
+            </div>
+        )
+    }
+}
+
+-----------------------------------------------------------
+
+// binding - bind()
+
+ class Eventbind extends Component {
+    constructor(props) {
+      super(props)
+      this.state = {
+         msg: 'hello'
+      }
+    }
+   
+clickHandler = () => {
+    this.setState({
+        msg: 'state to bye'
+    })
+}
+
+  render() {
+    return (
+      <div>
+        <div> {this.state.msg} </div>
+	<button onClick={this.clickHandler.bind(this)}> Click </button> 
+      </div>
+    )
+  }
+}
+
+---------------------------------------------------------------------
+
+// binding - arrow funct
+
+ class Eventbind extends Component {
+    constructor(props) {
+      super(props)
+      this.state = {
+         msg: 'hello'
+      }
+    }
+ clickHandler = () => {
+    this.setState({
+        msg: 'state to bye'
+    })
+   }
+
+  render() {
+    return (
+      <div>
+        <div> {this.state.msg} </div>
+        <button onClick={() => this.clickHandler()}> Click </button>
+	</div>
+    )
+  }
+}
+
+---------------------------------------------------------------------------
+
+// binding - in constructor
+
+class Eventbind extends Component {
+    constructor(props) {
+      super(props)
+      this.state = {
+         msg: 'hello'
+      }
+this.clickHandler = this.clickHandler.bind(this)
+    }
+clickHandler(){
+      this.setState({
+      msg:'bye'
+      })
+      console.log(this)
+}
+
+render() {
+    return (
+      <div>
+        <div> {this.state.msg} </div>
+        <button onClick={() => this.clickHandler()}> Click </button>
+	<button onClick={this.clickHandler}> Click </button>
+	</div>
+    )
+  }
+}
+
+----------------------------------------------------------------------------
+
+// binding - arrow funct as Class prop
+
+class Eventbind extends Component {
+    constructor(props) {
+      super(props)
+      this.state = {
+         msg: 'hello'
+      }
+    }
+clickHandler = () => {
+    this.setState({
+        msg: 'state to bye'
+    })
+}
+
+render() {
+    return (
+      <div>
+        <div> {this.state.msg} </div>
+        <button onClick={() => this.clickHandler()}> Click </button>
+	<button onClick={this.clickHandler}> Click </button>
+	</div>
+    )
+  }
+}
+
+---------------------------------------------------------------------------
+
+
+// list rendering 
+
+
+// 1. using {} for map function
+
+// function ListRendering() {
+// const names = ['gian', 'dorami', 'nobita', 'sizuka']
+// return (
+//     <div>
+//         {/* 1. {} as map funct is js code need to evalute so {} do in jsx */}
+//         {
+//             names.map((name) => <h3>{name}</h3>)
+//         }
+//     </div>
+// )}
+
+// 2. as  a variable 
+
+function ListRendering() {
+    const names = ['gian', 'dorami', 'nobita', 'sizuka']
+    const namesList = names.map((name) => <h3>{name}</h3>)
+    return(
+        <div> {namesList} </div>
+    )
+}
+export default ListRendering
+
+
+// 3.  obj properties
+import React from 'react'
+import Person from './Person'
+
+function ListRendering() {
+    const persons =[
+        {
+            id: 1,
+            pname: "govinda",
+            age:34
+        },
+        {
+            id: 2,
+            pname: "geeta",
+            age:879
+        }
+]
+
+// personlist render list -- person c render person html
+const personList = persons.map(person =><Person person={person}/>)
+return <div>{personList}</div>
+}
+export default ListRendering
+
+
+from person.js
+import React from 'react'
+
+function Person({person}) {
+  return (
+    <div>
+        <h2> name -{person.pname +" "+ person.age} </h2>
+    </div>
+  )
+}
+export default Person
+
+-------------------------------------------------------------------
+// Styling using simple css
+
+import './Stylecss.css'
+function Stylesheet() {
+  return (
+    <div>
+      <h2 className='primary'> Simple Stylesheet</h2>
+    </div>
+  )
+}
+
+// css file
+
+.primary{color:blue;}
+
+----------------------------------------------------------------
+
+// Styling using simple css with props
+
+
+
+
+
+----------------------------------------------------
+
+// Simple Controlled Form Handling
+
+import React, { Component } from 'react'
+
+class Formeg extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            username:''
+        }
+    }
+    onchangeHandler = (event) => {
+        this.setState({
+            username:event.target.value
+        })
+    }
+    render() {
+        return (
+            <form className='formClassName'>
+        <div>
+            <label> username </label>
+            <input type='text' value={this.state.username}
+             onChange={this.onchangeHandler}></input>
+
+            <input> </input>
+            {/* <button></button> */}
+        </div>
+      </form>
+    )
+  }
+}
+
+export default Formeg
+
+
+
+----------------------------------------------------------------------
+
+// 
+
+import React, { Component } from 'react'
+// import './Stylecss.css'
+class Formeg extends Component {
+constructor(props) {
+super(props)
+this.state = {
+username: '',
+comment: '',
+topic:'react'
+
+}
+}
+onchangeHandler = (event) => {
+this.setState({
+username: event.target.value
+})
+}
+commentHandler = event => {
+this.setState({
+comment: event.target.value
+})
+}
+handleTopic = event => {
+this.setState({
+topic: event.target.value
+})
+}
+
+handleSubmit = event => {
+// this.setState({
+
+// })
+alert(`${this.state.username} ${this.state.comment} ${this.state.topic}`)
+
+// to prevent default form execution
+event.preventDefault()
+}
+
+render() {
+return (
+<form className='formClassName' onSubmit={this.handleSubmit}>
+    <div>
+        <label> username </label>
+        <input type='text' value={this.state.username}
+            onChange={this.onchangeHandler}></input>
+    </div>
+    <br></br>
+    <div>
+        <label>Comments</label>
+        <textarea value={this.state.comment}
+            onChange={this.commentHandler}> </textarea>
+    </div>
+    <br></br>
+    <div>
+        <label>Topic</label>
+        <select value={this.state.value} onChange={this.handleTopic}>
+        <option value="react"> React </option>
+        <option value="angular"> Angular </option>
+        <option value="vue"> Vue </option>
+        </select>
+    </div>
+    <br></br>
+    <button type='submit'>Submit</button>
+</form>
+)
+}
+}
+
+export default Formeg
+
+--------------------------------------------------------------------------------------
+// using useState
+import React, { Component, useState } from 'react'
+function Mix() {
+    const [name, setName] = useState('')
+    const [comment, setcomment] = useState('')
+    const [topic, setTopic] = useState('react')
+    const namechng = (e) => setName(
+        e.target.value
+    )
+    const commentHandler = (e) => setcomment(
+        e.target.value
+    )
+    const handleTopic = (e) => setTopic(
+        e.target.value
+    )
+    const handleSubmit = (e) =>{
+        alert(`hii ${name} ${comment} ${topic}`)
+    }
+    return (
+<div>
+<form className='formClassName' onSubmit={handleSubmit}>
+    <div>
+        <label> username </label>
+        <input type='text' value={name}
+            onChange={namechng}></input>
+    </div>
+    <br></br>
+    <div>
+        <label>Comments</label>
+        <textarea value={comment}
+            onChange={commentHandler}> </textarea>
+    </div>
+    <br></br>
+    <div>
+        <label>Topic</label>
+        <select value={topic} onChange={handleTopic}>
+            <option value="react"> React </option>
+            <option value="angular"> Angular </option>
+            <option value="vue"> Vue </option>
+        </select>
+    </div>
+    <br></br>
+    <button type='submit'>Submit</button>
+</form>
+</div >
+)
+}
+export default Mix
+
+--------------------------------------------------------------------------------------
+form example w/ Class and setState 
+
+import React, { Component } from 'react'
+
+export class Mix extends Component {
+    constructor(props) {
+      super(props)
+    
+      this.state = {
+         name : '',
+         age : null
+      }
+    }
+    
+    nameenter=(e)=>{
+        this.setState({
+            name : e.target.value
+        })
+        // console.log(name)
+    }
+    ageenter=(e)=>{
+        this.setState({
+            age : e.target.value
+        })
+        // console.log(name)
+    }
+
+    btnclick = (e) =>{
+        alert(`${this.state.name} ${this.state.age}`)
+        e.preventDefault()
+    }
+  render() {
+    return (
+        <div>
+            
+      <form onSubmit={this.btnclick}>
+        name <input type='text' 
+        value={this.name}
+        onChange={this.nameenter}
+        ></input>
+        <br></br><br></br>
+        age <input type='number'
+        value={this.age}
+        onChange={this.ageenter}
+        ></input>
+        <br></br><br></br>
+        <button type='submit'> Click </button>
+      </form>
+        </div>
+    )
+  }
+}
+
+export default Mix
+
+
+import React,{useState} from 'react'
+
+function Mix() {
+const [name, setName ] = useState('')
+const [age, setAge ] = useState()
+
+const nameenter = (e) => setName( e.target.value)
+const ageenter = (e) => setAge( e.target.value)
+const btnclick = (
+    (e) => {
+    alert(`${name} ${age}`)
+    e.preventDefault()}
+    
+
+) 
+  return (
+    <div>
+      <form onSubmit={btnclick}>
+      name <input type='text' 
+        value={name}
+        onChange={nameenter}
+        ></input>
+
+        <br></br><br></br>
+
+        age <input type='number'
+        value={age}
+        onChange={ageenter}
+        ></input>
+
+        <br></br><br></br>
+
+        <button type='submit'> Click </button>
+        </form>
+    </div>
+  )
+}
+
+export default Mix
+
+-------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
