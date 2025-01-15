@@ -1,0 +1,518 @@
+body {
+	margin: 0;
+}
+
+.-wrapper {
+	font-family: Arial !important;
+	line-height: 19px !important;
+	color: inherit !important;
+}
+
+.top-heading{
+	color: #005686;
+    font-family: "3dsregular";
+    font-size: 26px;
+    display: inline-block;
+    padding-bottom: 0px;
+    text-align: center;
+    width: 70%;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 2000;
+}
+
+li {
+	float: left;
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.navigation-list a:visited {
+	color: white;
+}
+
+.activeTab {
+	color: #368ec4 !important;
+	border-left: 2px solid !important;
+}
+
+.-wrapper {
+	width: 100%;
+	height: 5%;
+	position: relative;
+}
+
+.wp-tablist {
+	white-space: nowrap;
+	display: inline-block;
+	padding-left: 0;
+	margin-bottom: 0;
+	/* height: 100%; */
+}
+
+#inner {
+	height: 91%;
+}
+
+ul, ol {
+	margin-top: 0;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #d1d4d4;
+}
+
+.clickable
+{
+	cursor: pointer;
+	padding-right: 11px;
+}
+
+.wp-tab:hover, .wp-tab.selected, .wp-tab.selected:hover, .wp-tab.selected.dragged
+	{
+	color: #3d3d3d;
+}
+
+.wp-tab .inner-ctn, .wp-tab .inner-ctn:hover, .wp-tab .inner-ctn:focus {
+	position: relative;
+	color: inherit;
+	text-decoration: none;
+	outline: 0;
+}
+
+.wp-tab .title {
+	display: block;
+	min-width: 44px;
+	max-width: 275px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	line-height: 34px;
+	margin: 0 14px;
+	font-size: 15px !important;
+}
+
+.wp-col {
+	float: left;
+	min-height: 1px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box
+}
+
+.wp-col.last {
+	float: right
+}
+
+.wp-menu {
+	display: none;
+	position: absolute;
+	z-index: 110;
+	background: #fff;
+	color: #777;
+	font-size: 13px;
+	line-height: 1.8em;
+	border: 1px solid #bebebe;
+	border-radius: 3px;
+	-webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15)
+}
+
+.wp-menu-actions {
+	padding: 8px 0;
+	margin: 0
+}
+
+.wp-menu-action {
+	cursor: pointer;
+	padding: 0 11px;
+	white-space: nowrap;
+	line-height: 44px;
+	border-bottom: 1px dotted #eee;
+	border-top: 1px solid transparent
+}
+
+.wp-menu-action:last-child {
+	border-bottom: 1px solid transparent
+}
+
+.wp-menu-action .fonticon {
+	margin: 0 11px 0 0;
+	font-size: 1.6em;
+	opacity: .7;
+	float: left
+}
+
+.wp-menu-action .text {
+	overflow: hidden
+}
+
+.wp-menu-action:hover .fonticon {
+	opacity: .81
+}
+
+.wp-menu-action:hover {
+	background: #f5f5f5;
+	border-top: 1px solid #e4e4e4;
+	border-bottom: 1px solid #e4e4e4;
+	color: #1b1b1b
+}
+
+.wp-menu-delimiter {
+	border-top: 1px solid #d8d8d8;
+	padding-bottom: 7px;
+	margin-top: 7px
+}
+
+.wp-menu-section {
+	border-bottom: 1px solid #d8d8d8;
+	padding-bottom: 7px;
+	margin-bottom: 7px
+}
+
+.wp-menu-section:last-child {
+	border: 0;
+	margin: 0;
+	padding: 0
+}
+
+.wp-menu-selectable .wp-menu-action .fonticon {
+	opacity: 0
+}
+
+.wp-menu-selectable .wp-menu-action:hover .fonticon {
+	opacity: .2
+}
+
+.wp-menu-selectable .wp-menu-selected .fonticon, .wp-menu-selectable .wp-menu-selected:hover .fonticon
+	{
+	opacity: .5
+}
+
+.wp-menu-last {
+	border-bottom: 0;
+	padding-bottom: 0;
+	margin-bottom: 0
+}
+
+.wp-menu-action .fonticon-record {
+	opacity: 0;
+	font-size: .8em
+}
+
+.wp-tabview-panel {
+	position: relative
+}
+
+.wp-tab-panel {
+	clear: both;
+	overflow: hidden
+}
+
+.wp-tablist-scroller-ctn {
+	border-bottom: 1px solid #d1d4d4;
+	position: relative
+}
+
+.wp-tablist-scroller-ctn .uwa-scroller {
+	height: 39px
+}
+
+.wp-tablist-scroller-ctn .wp-menu ul {
+	padding-left: 0
+}
+
+.wp-tablist-scroller-ctn .wp-menu .header-section {
+	margin-bottom: 0
+}
+
+.wp-tablist-scroller-ctn .wp-menu .tabs-section {
+	max-height: 300px;
+	overflow: hidden;
+	overflow-y: auto;
+	padding-top: 7px
+}
+
+.wp-tablist-scroller-ctn .wp-menu-action .text {
+	padding-right: 26px
+}
+
+.wp-tablist-scroller {
+	position: relative;
+	margin: 0 77px 0 44px;
+	line-height: 38px;
+	height: 38px;
+	font-size: 14px
+}
+
+.wp-tablist-scroller .fonticon {
+	margin: 0;
+	color: #77797c;
+	font-size: 16px
+}
+
+.wp-tablist-scroller .fonticon:hover {
+	color: #3d3d3d
+}
+
+.wp-tablist-scroller .fonticon:active {
+	color: #005686
+}
+
+.wp-tablist-scroller .fonticon.active {
+	color: #368ec4
+}
+
+.wp-tablist-scroller .fonticon.fonticon-list-add, .wp-tablist-scroller .fonticon.fonticon-menu
+	{
+	font-size: 19px
+}
+
+.wp-tablist {
+	white-space: nowrap;
+	display: inline-block;
+	padding-left: 0;
+	margin-bottom: 0;
+	/* height: 100% */
+}
+
+.wp-tab-directadd {
+	display: inline-block;
+	cursor: pointer;
+	width: 44px;
+	position: relative;
+	text-align: center;
+	margin-left: -11px
+}
+
+.wp-tab-directadd .fonticon-plus {
+	position: absolute;
+	top: 0;
+	right: 14px;
+	font-size: 18px
+}
+
+.wp-tab-directadd .fake-content {
+	overflow: hidden
+}
+
+.wp-tabview[overflow='true'] .wp-tab-directadd {
+	visibility: hidden
+}
+
+.wp-tabview[overflow='false'] .wp-tab-addlist {
+	display: none
+}
+
+.wp-tab {
+	display: inline-block;
+	cursor: pointer;
+	color: #77797c;
+	/* margin: 0 5px 0 5px; */
+	transition: color .2s ease-in-out;
+	height: 38px;
+	transition: margin .2s ease-in-out
+}
+
+.wp-tab.editing {
+	overflow: hidden
+}
+
+.wp-tab:hover, .wp-tab.selected, .wp-tab.selected:hover, .wp-tab.selected.dragged
+	{
+	color: #3d3d3d
+}
+
+.wp-tab.selected:hover {
+	cursor: text
+}
+
+.wp-tab.selected {
+	margin-right: 5px
+}
+
+.wp-tab.dragged, .wp-tab.dragged:hover {
+	cursor: move
+}
+
+.wp-tab .underline-tab-el {
+	border-bottom: 3px solid transparent;
+	margin-top: 0;
+	transition: border-bottom-color .2s ease-in-out, margin .2s ease-in-out
+}
+
+.wp-tab:hover .underline-tab-el, .wp-tab.dragged .underline-tab-el {
+	border-bottom-color: #77797c;
+	margin-top: -2px
+}
+
+.wp-tab.selected .underline-tab-el, .wp-tab.selected:hover .underline-tab-el,
+	.wp-tab.selected.dragged .underline-tab-el {
+	border-bottom: 3px solid #368ec4;
+	margin-top: -2px
+}
+
+.wp-tab.selected .underline-tab-el {
+	margin-right: 8px
+}
+
+.wp-tab.selected .action {
+	display: block
+}
+
+.wp-tab .action {
+	display: none;
+	cursor: pointer;
+	position: absolute;
+	right: -30px;
+	width: 44px;
+	height: 38px;
+	top: 0
+}
+
+.wp-tab .title {
+	display: block;
+	min-width: 44px;
+	max-width: 316px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	line-height: 34px;
+	margin: 0 14px
+}
+
+.wp-tab .edit-in-place {
+	height: 1.82em;
+	line-height: 1.82em;
+	padding-top: 0;
+	padding-bottom: 0;
+	display: inline-block
+}
+
+.wp-tab.placeholder {
+	border: 1px dashed #477997;
+	border-radius: 3px;
+	overflow: hidden
+}
+
+.wp-tab.dragged {
+	position: absolute
+}
+
+.wp-tab .inner-ctn, .wp-tab .inner-ctn:hover, .wp-tab .inner-ctn:focus {
+	position: relative;
+	color: inherit;
+	text-decoration: none;
+	outline: 0
+}
+
+.wp-scroller-button-ctn {
+	display: none;
+	position: absolute;
+	top: 0;
+	margin: 0;
+	text-align: center;
+	height: 38px
+}
+
+.wp-scroller-button-ctn .icon, .wp-scroller-button-ctn .icon.disabled,
+	.wp-scroller-button-ctn .icon.disabled:hover {
+	position: relative;
+	cursor: pointer;
+	width: 44px;
+	height: 38px
+}
+
+.wp-scroller-button-ctn .icon.disabled, .wp-scroller-button-ctn .icon.disabled:hover
+	{
+	opacity: 0;
+	transition: opacity .5s
+}
+
+.wp-scroller-button-ctn.previous {
+	width: 44px;
+	left: -44px
+}
+
+.wp-scroller-button-ctn.next {
+	right: -77px;
+	width: 88px
+}
+
+.wp-tabview[overflow='true'] .wp-scroller-button-ctn {
+	display: inline-block
+}
+
+.wp-tabview .wp-icon-list {
+	margin-left: 12px
+}
+
+.wp-layout-picker .wp-modal-body {
+	text-align: center
+}
+
+.wp-layout-picker p {
+	margin-bottom: 1.5em
+}
+
+.wp-picker-wrap {
+	display: inline-block
+}
+
+.wp-picker-option {
+	height: 50px
+}
+
+body {
+	font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+	height: 86%;
+	top: 14%;
+	left: 0;
+	background-color: rgb(255, 255, 255);
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 12px;
+	color: #3d3d3d;
+	font-size: small;
+	font-weight: bold;
+	float : left;
+}
+
+.sidenav a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 15px;
+	color: #818181;
+	display: block;
+	transition: 0.3s;
+}
+
+.sidenav .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+	.sidenav {
+		padding-top: 15px;
+	}
+	.sidenav a {
+		font-size: 18px;
+	}
+}
